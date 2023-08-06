@@ -30,7 +30,11 @@ async function buscaCep(cep) {
     logradouro.value = "";
     bairro.value = "";
 
-    mensagem.innerHTML = "CEP não encontrado. tente novamente!";
+    mensagem.innerHTML = `
+    <span>
+        CEP não encontrado. tente novamente!
+    </span>
+    `;
   }
 }
 

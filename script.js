@@ -1,7 +1,11 @@
 // https://viacep.com.br/ws/01001000/json/
 //01001000
+// CEP não encontrado. tente novamente!
 
 async function buscaCep(cep) {
+  const mensagem = document.getElementById("erro");
+  mensagem.innerHTML = "";
+
   try {
     const consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
     const converte = await consultaCEP.json();
@@ -20,6 +24,13 @@ async function buscaCep(cep) {
     bairro.value = converte.bairro;
   } catch (erro) {
     console.log(erro);
+    // alert("CEP NÃO ENCONTRADO");
+
+    cidade.value = "";
+    logradouro.value = "";
+    bairro.value = "";
+
+    mensagem.innerHTML = "CEP não encontrado. tente novamente!";
   }
 }
 

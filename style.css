@@ -68,3 +68,7 @@ form input {
   border-bottom: solid 3px var(--blue);
   border-radius: 10px;
 }
+
+p {
+  color: red;
+}
